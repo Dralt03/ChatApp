@@ -1,5 +1,8 @@
 import assets from "../assets/assets";
+import { logout } from "../config/firebase";
 import "./rightsidebar.css";
+import { auth } from "../config/firebase";
+
 const RightSidebar = () => {
   return (
     <div className="rs">
@@ -23,7 +26,14 @@ const RightSidebar = () => {
         </div>
       </div>
 
-      <button>Logout</button>
+      <button
+        onClick={() => {
+          console.log(auth);
+          logout();
+        }}
+      >
+        Logout
+      </button>
     </div>
   );
 };
